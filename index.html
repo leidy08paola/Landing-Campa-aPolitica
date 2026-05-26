@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campaña Política 2026</title>
     <style>
+        /* MODIFICACIÓN DE COLORES CSS (Cambio #3) */
         :root {
-            --primary-color: #1a365d; /* Azul Institucional */
-            --accent-color: #e65c00;  /* Naranja de Acción */
-            --text-dark: #2d3748;
-            --bg-light: #f7fafc;
+            --primary-color: #0d9488; /* Nuevo: Verde Teal / Esmeralda */
+            --accent-color: #7c3aed;  /* Nuevo: Morado de Acción Extrema */
+            --text-dark: #1f2937;
+            --bg-light: #f3f4f6;
+            --btn-secondary: #4b5563; /* Color para el nuevo botón secundario */
         }
 
         body {
@@ -27,7 +29,7 @@
             align-items: center;
             justify-content: center;
             padding: 60px 20px;
-            background: linear-gradient(135deg, var(--primary-color) 60%, #2a4365);
+            background: linear-gradient(135deg, var(--primary-color) 60%, #115e59);
             color: white;
             min-height: 80vh;
         }
@@ -57,8 +59,9 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
-        /* Botón de Acción */
+        /* Botón de Acción Principal */
         .btn-cta {
+            display: inline-block;
             background-color: var(--accent-color);
             color: white;
             padding: 15px 30px;
@@ -72,6 +75,28 @@
         }
 
         .btn-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* NUEVO BOTÓN (Estilo para Cambio #2) */
+        .btn-secondary {
+            display: inline-block;
+            background-color: transparent;
+            color: white;
+            padding: 13px 28px;
+            border: 2px solid white;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 15px;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary-color);
             transform: scale(1.05);
         }
 
@@ -98,7 +123,7 @@
 
         /* Formulario */
         .contacto {
-            background-color: #edf2f7;
+            background-color: #e5e7eb;
             padding: 60px 20px;
             text-align: center;
         }
@@ -124,12 +149,11 @@
 </head>
 <body>
 
-    <!-- HERO -->
- <nav style="background: #1a365d; padding: 15px; color: white; text-align: center;">
-    <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Inicio</a> | 
-    <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Propuestas</a> | 
-    <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Contacto</a>
-</nav>
+    <nav style="background: var(--primary-color); padding: 15px; color: white; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Inicio</a> | 
+        <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Propuestas</a> | 
+        <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Contacto</a>
+    </nav>
 
     <section class="hero">
         <div class="hero-text">
@@ -137,14 +161,14 @@
             <p>Con honestidad, trabajo y propuestas reales para transformar nuestra comunidad.</p>
             <br>
             <a href="#unirse" class="btn-cta">Únete al Cambio</a>
+            
+            <a href="#" class="btn-secondary">Plan de Gobierno 📄</a>
         </div>
         <div class="hero-img">
-            <!-- Reemplazar con la foto del político -->
-            <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_kOhXho39dYEuWwJIGDZsLgxT9sD1IeoNng&s alt="Candidato Político">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_kOhXho39dYEuWwJIGDZsLgxT9sD1IeoNng&s" alt="Candidato Político">
         </div>
     </section>
 
-    <!-- PROPUESTAS -->
     <section class="propuestas">
         <h2>Mis Compromisos</h2>
         <div class="grid-propuestas">
@@ -160,15 +184,18 @@
                 <h3>Transparencia</h3>
                 <p>Cuentas claras y participación ciudadana en cada decisión.</p>
             </div>
-
             <div class="card">
-    <h3>Salud Digna</h3>
-    <p>Mejoras en la atención primaria y más medicamentos.</p>
-</div>
+                <h3>Salud Digna</h3>
+                <p>Mejoras en la atención primaria y más medicamentos.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Sostenibilidad</h3>
+                <p>Energías limpias, reforestación y cuidado de nuestras fuentes hídricas.</p>
+            </div>
         </div>
     </section>
 
-    <!-- FORMULARIO DE CAPTURA -->
     <section class="contacto" id="unirse">
         <h2>Sé parte de la transformación</h2>
         <p>Regístrate para recibir nuestras propuestas y enterarte de los eventos.</p>
@@ -186,14 +213,7 @@
         </form>
     </section>
 
-    <footer style="background-color: #1a365d; color: white; text-align: center; padding: 20px; margin-top: 40px;">
-    <p>&copy; 2026 Campaña Política. Todos los derechos reservados.</p>
-    <p>Síguenos en: 
-        <a href="#" style="color: #e65c00; margin: 0 5px; text-decoration: none; font-weight: bold;">Facebook</a> | 
-        <a href="#" style="color: #e65c00; margin: 0 5px; text-decoration: none; font-weight: bold;">Twitter</a> | 
-        <a href="#" style="color: #e65c00; margin: 0 5px; text-decoration: none; font-weight: bold;">Instagram</a>
-    </p>
-</footer>
-
-</body>
-</html>
+    <footer style="background-color: var(--primary-color); color: white; text-align: center; padding: 20px; margin-top: 40px;">
+        <p>&copy; 2026 Campaña Política. Todos los derechos reservados.</p>
+        <p>Síguenos en: 
+            <a href="#" style="color: var(--accent-color); margin: 0 5px; text-decoration: none; font-weight: bold;">Facebook</a> |
