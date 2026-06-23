@@ -1,0 +1,24 @@
+name: Validacion de Landing Page
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verificar-estructura:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar el repositorio
+      uses: actions/checkout@v4
+
+    - name: Verificar archivos requeridos
+      run: |
+        echo "Comprobando estructura mínima del proyecto..."
+        test -f index.html && echo "✓ index.html existe" || (echo "✗ Falta index.html" && exit 1)
+        test -f css/style.css && echo "✓ css/style.css existe" || (echo "✗ Falta css/style.css" && exit 1)
+        test -f js/script.js && echo "✓ js/script.js existe" || (echo "✗ Falta js/script.js" && exit 1)
+        test -f README.md && echo "✓ README.md existe" || (echo "✗ Falta README.md" && exit 1)
+        echo "¡Estructura validada con éxito!"
